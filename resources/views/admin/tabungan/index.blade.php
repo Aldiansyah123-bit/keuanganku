@@ -53,7 +53,7 @@
                                                 @foreach ($data as $item)
                                                 <tr>
                                                     <td>{{ $item->code }}</td>
-                                                    <td>Rp. {{ $item->qty }}</td>
+                                                    <td>Rp. {{ number_format($item->qty) }}</td>
                                                     <td>{{ $item->description }}</td>
                                                     <td>{{ $item->created_at->format('d M Y H:i') }}</td>
                                                     <td>
@@ -92,7 +92,7 @@
                         <div class="col-md-12">
                             <label>Jumlah <span class="text-danger">*</span></label>
                             <div class="form-group">
-                                <input type="text" name="qty" placeholder="Jumlah Pendapatan" class="form-control" id="rupiah">
+                                <input type="number" name="qty" placeholder="Jumlah Pendapatan" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-12">

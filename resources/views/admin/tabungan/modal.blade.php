@@ -15,7 +15,7 @@
                         <div class="col-md-12">
                             <label>Jumlah <span class="text-danger">*</span></label>
                             <div class="form-group">
-                                <input type="text" name="qty" placeholder="Jumlah Pengeluaran" class="form-control" value="{{ $item->qty }}" id="rupiah">
+                                <input type="number" name="qty" placeholder="Jumlah Pengeluaran" class="form-control" value="{{ $item->qty }}">
                             </div>
                         </div>
                         <div class="col-md-12">
