@@ -116,7 +116,7 @@
     </footer>
     <!-- END: Footer-->
 
-
+    @yield('js')
     <script src="{{ asset('assets') }}/app-assets/vendors/js/vendors.min.js"></script>
     <script src="{{ asset('assets') }}/app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="{{ asset('assets') }}/app-assets/js/core/app-menu.js"></script>

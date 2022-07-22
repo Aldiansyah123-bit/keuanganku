@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Update Company</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Update Tabungan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -15,7 +15,7 @@
                         <div class="col-md-12">
                             <label>Jumlah <span class="text-danger">*</span></label>
                             <div class="form-group">
-                                <input type="number" name="qty" placeholder="Jumlah Pengeluaran" class="form-control" value="{{ $item->qty }}">
+                                <input type="text" name="qty" placeholder="Jumlah Pengeluaran" class="form-control" value="{{ $item->qty }}" id="rupiah">
                             </div>
                         </div>
                         <div class="col-md-12">
