@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PengeluaranResource;
 use App\Models\Pengeluaran;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -16,7 +17,7 @@ class PengeluaranController extends Controller
      */
     public function index()
     {
-        $data = Pengeluaran::orderBy('id', 'DESC')->get();
+        $data = Pengeluaran::orderBy('id','DESC')->get();
         return view('admin.pengeluaran.index', compact('data'));
     }
 

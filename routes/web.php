@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PendapatanController;
 use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\TabunganController;
+use App\Models\Pengeluaran;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,8 @@ Route::middleware(['auth'])->group(function (){
     Route::resource('pendapatan', PendapatanController::class);
     Route::resource('pengeluaran', PengeluaranController::class);
     Route::resource('tabungan', TabunganController::class);
+    // Route::view('pengeluaran', 'admin.pengeluaran.index')->name('pengeluaran');
+    Route::apiResource('pengeluaran-data', PengeluaranController::class);
+
 });
 require __DIR__.'/auth.php';

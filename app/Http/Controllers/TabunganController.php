@@ -16,8 +16,12 @@ class TabunganController extends Controller
      */
     public function index()
     {
-        $data = Tabungan::orderBy('id', 'DESC')->get();
-        return view('admin.tabungan.index', compact('data'));
+        $data = [
+            'data' => Tabungan::orderBy('id', 'DESC')->get(),
+            'total'=> Tabungan::sum('qty')
+        ];
+
+        return view('admin.tabungan.index', $data);
     }
 
     /**
