@@ -12,8 +12,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $day = date('d');
-        $week = Carbon::now()->subDays(7);
+        $day = date('YYYY-MM-d');
+        $week = [Carbon::now()->startOfWeek(),Carbon::now()->endOfWeek()];
         $month = date('m');
         $year = date('YYYY');
         $pendapatan = Pendapatan::whereMonth('created_at', $month)->sum('qty');
@@ -25,7 +25,7 @@ class DashboardController extends Controller
             'pend_pertahun' => Pendapatan::whereYear('created_at', '<=',$year)->sum('qty'),
             'pengeluaran'   => Pengeluaran::sum('qty'),
             'keluar_day'    => Pengeluaran::whereDay('created_at', $day)->sum('qty'),
-            'keluar_week'   => Pengeluaran::where('created_at', '>=', $week)->sum('qty'),
+            'keluar_week'   => Pengeluaran::whereBetween('created_at', $week)->sum('qty'),
             'keluar_month'  => Pengeluaran::whereMonth('created_at', $month)->sum('qty'),
             'pend_bersih'   => $pendapatan_bersih,
             'tabungan'      => Tabungan::sum('qty'),
